@@ -19,7 +19,7 @@ export default function Hitcircle({
   return (
     <div className="w-24 absolute" style={{ right: position }}>
       <Image
-        style={{ objectFit: "none", overflow: "visible" }}
+        style={{ objectFit: finisher ? "none" : "initial", overflow: "visible" }}
         src={`/elements/${variant}.png`}
         alt={""}
         width={finisher ? HITCIRCLE_SIZE.finisher : HITCIRCLE_SIZE.normal}
