@@ -17,7 +17,7 @@ export default function Hitcircle({
   position,
 }: HitcircleProps) {
   return (
-    <div className="w-24 absolute" style={{ right: position }}>
+    <div className="w-24 absolute top-6" style={{ right: position }}>
       <Image
         style={{ objectFit: finisher ? "none" : "initial", overflow: "visible" }}
         src={`/elements/${variant}.png`}
