@@ -1,12 +1,10 @@
-import { Don, DonFinisher, Kat, KatFinisher } from "@/components/hitcircles";
+import Pattern from "@/components/pattern";
 
 export default function PlayField() {
   return (
-    <div className="relative items-center h-40 w-screen">
-      <Don position={0}></Don>
-      <Kat position={150}></Kat>
-      {/* <DonFinisher></DonFinisher>
-      <KatFinisher></KatFinisher> */}
+    <div className="relative h-36 w-screen">
+      <Pattern patternString="ddK (dddK) [kkd-k]"></Pattern>
+      {/* <Pattern patternString="KkDK"></Pattern> */}
     </div>
   );
 }
