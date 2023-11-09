@@ -6,8 +6,8 @@ type HitcircleProps = {
   position: number;
 };
 
-const HITCIRCLE_SIZE = {
-  finisher: 128,
+export const HITCIRCLE_SIZE = {
+  finisher: 144,
   normal: 96,
 };
 
