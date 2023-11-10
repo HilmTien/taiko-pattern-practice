@@ -70,12 +70,12 @@ export default function Pattern({ patternString }: PatternProps) {
   let size = useWindowSize()
 
   return (
-    <div className="relative">
+    <div className="relative overflow-hidden">
       <JudgementCircle />
       {/* <div className="relative h-36" style={{ width: current_x + HITCIRCLE_SIZE.normal / 4, transform: "translateX(-185px)" }}>
         {hitobjects.map((hitobject) => hitobject)}
       </div> */}
-      <motion.div animate={{ x: [size.width, -current_x] }} transition={{ repeat: Infinity, duration: 8, ease: "linear" }} className="relative h-36" style={{ width: current_x + HITCIRCLE_SIZE.normal / 4 }}>
+      <motion.div className="relative h-36" animate={{ x: [size.width, -current_x] }} transition={{ repeat: Infinity, duration: 8, ease: "linear" }} style={{ width: current_x + HITCIRCLE_SIZE.normal / 4 }}>
         {hitobjects.map((hitobject) => hitobject)}
       </motion.div>
     </div>
