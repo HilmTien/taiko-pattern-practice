@@ -1,5 +1,7 @@
+import useWindowSize from "@/clientUtils/useWindowSize";
 import { HITCIRCLE_SIZE } from "@/components/hitcircle";
 import { Don, DonFinisher, Kat, KatFinisher } from "@/components/hitcircles";
+import { motion } from "framer-motion";
 
 type PatternProps = {
   patternString: string;
@@ -7,7 +9,7 @@ type PatternProps = {
 
 export default function Pattern({ patternString }: PatternProps) {
   let current_x = 0;
-  let sv = 0.75
+  let sv = 1
   let delta_x = HITCIRCLE_SIZE.normal * sv
 
   const hitobjects = [];
@@ -63,9 +65,12 @@ export default function Pattern({ patternString }: PatternProps) {
       }
     }
   }
+
+  let size = useWindowSize()
+
   return (
-    <>
+    <motion.div animate={{ x: [size.width, -current_x] }} transition={{ repeat: Infinity, duration: 4, ease: "linear" }} className="relative h-36" style={{ width: current_x + HITCIRCLE_SIZE.normal / 4 }}>
       {hitobjects.map((hitobject) => hitobject)}
-    </>
+    </motion.div>
   );
 }
